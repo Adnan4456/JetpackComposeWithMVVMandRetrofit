@@ -99,4 +99,7 @@ dependencies {
     //jetpack compose Icons
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
 
+    //paging 3 library
+    implementation  ("androidx.paging:paging-compose:1.0.0-alpha14")
+
 }

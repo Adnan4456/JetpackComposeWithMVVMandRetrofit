@@ -26,6 +26,9 @@ import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.paging.LoadState
+import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.items
 import com.example.jetpackcomposewithmvvmandretorfit.Model.Post
 import com.example.jetpackcomposewithmvvmandretorfit.ui.theme.JetpackComposewithMVVMandRetorfitTheme
 import com.example.jetpackcomposewithmvvmandretorfit.utils.ApiState
@@ -115,7 +118,7 @@ fun EachRow(post: Post){
 
 @Composable
 fun getData(mainViewModel: MainViewModel){
-
+/*
     when (val result = mainViewModel.response.value){
         is ApiState.Success ->{
             LazyColumn{
@@ -132,6 +135,15 @@ fun getData(mainViewModel: MainViewModel){
         }
         is ApiState.Empty ->{
             CircularProgressAnimated()
+        }
+    }   */
+
+    val posts = mainViewModel.post.collectAsLazyPagingItems()
+    LazyColumn{
+        items(posts) { post ->
+            post?.let {
+                EachRow(post = post)
+            }
         }
     }
 }

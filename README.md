@@ -29,6 +29,7 @@ Minimum API level supported is: 24
  * [Kotlin](https://developer.android.com/kotlin) - Cross-platform, statically type, general purpose programming language with type inference.
  * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Dependency injection library for android.
  * [Retrofit](https://square.github.io/retrofit/) - A Type-safe HTTP client for android and java used to consume REST APIs.
+ * [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) - Paging 3 library helps to load large data from server or local database into small chunks.
  * [Gson](https://github.com/google/gson) - Used to convert Json to java and kotlin objects.
  * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Used to store and manage UI related data in a lifecycle concious way.
  * [Flow API](https://kotlinlang.org/docs/flow.html#sequences)  In coroutines, a flow is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value.

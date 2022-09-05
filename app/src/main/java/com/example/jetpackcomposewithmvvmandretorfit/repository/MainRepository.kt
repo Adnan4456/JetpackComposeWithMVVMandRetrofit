@@ -9,11 +9,13 @@ import kotlinx.coroutines.flow.flowOn
 import okhttp3.Dispatcher
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(
-    private val apiService: ApiService)
+class MainRepository
+@Inject
+constructor(private val apiService: ApiService)
 {
-    fun getPost(): Flow<List<Post>> = flow {
-        emit(apiService.getRequest())
-    }.flowOn(Dispatchers.IO)
+//    fun getPost(): Flow<List<Post>> = flow {
+//        emit(apiService.getRequest())
+//    }.flowOn(Dispatchers.IO)
+//    fun getPost()
 
 }
