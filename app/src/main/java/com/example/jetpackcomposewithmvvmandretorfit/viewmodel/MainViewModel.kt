@@ -7,7 +7,6 @@ import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import com.example.jetpackcomposewithmvvmandretorfit.repository.PagingDataSource
 import com.example.jetpackcomposewithmvvmandretorfit.repository.PostRepository
-import com.example.jetpackcomposewithmvvmandretorfit.retrofit.PostApi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -15,9 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel
 @Inject
-constructor(private val repo :PostRepository):
-//constructor(private val apiService: PostApi):
-    ViewModel() {
+constructor(private val repo :PostRepository): ViewModel() {
 
         val post = Pager(
             PagingConfig(pageSize = 10)
