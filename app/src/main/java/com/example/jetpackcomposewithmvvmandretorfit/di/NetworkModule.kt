@@ -1,6 +1,8 @@
 package com.example.jetpackcomposewithmvvmandretorfit.di
 
-import com.example.jetpackcomposewithmvvmandretorfit.retrofit.ApiService
+import com.example.jetpackcomposewithmvvmandretorfit.repository.PostRepository
+import com.example.jetpackcomposewithmvvmandretorfit.repository.PostRepositoryImpl
+import com.example.jetpackcomposewithmvvmandretorfit.retrofit.PostApi
 import com.example.jetpackcomposewithmvvmandretorfit.utils.Constants
 import dagger.Module
 import dagger.Provides
@@ -17,12 +19,14 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesApiService():ApiService =
+    fun providesApiService():PostApi =
         Retrofit.Builder()
             .run {
                 baseUrl(Constants.BASE_URL)
                     addConverterFactory(GsonConverterFactory.create())
                 build()
-            }.create(ApiService::class.java)
+            }.create(PostApi::class.java)
 
+    @Provides
+    fun providePostRepository(api: PostApi): PostRepository = PostRepositoryImpl(api)
 }
